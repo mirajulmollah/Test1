@@ -1,70 +1,36 @@
-import { useState } from "react"
+import React, { useState } from 'react'
 
 function App() {
 
-  const [language, setlanguage] = useState(
-    {
-      html: false,
-      css: false,
-      js: false,
-    }
-  )
+  const [language,setLanguage] = useState({
+    html:false,
+    css:false,
+  })
 
 
 
 
   return (
-    <div className="select-none">
+    <div>
+      <div className='select-none'>
+  <label htmlFor="html">
+    <input type="checkbox" id="html" checked={language.html} onChange={(e) => setLanguage({
+      ...language,
+      html:e.target.checked})} />
+    HTML
+  </label>
 
+  <label htmlFor="css">
+    <input type="checkbox" id="css" checked={language.css} onChange={(e) => setLanguage({
+      ...language,
+      css:e.target.checked})} />
+    CSS
+  </label>
+</div>
 
-      <label htmlFor="cb">
-        <input type="checkbox" id='cb' checked={language.html} onChange={(e) => {
-          setlanguage({
-            ...language,
-            html: e.target.checked
-          })
-        }} />
-        HTML
-
-      </label>
-
-      <label htmlFor="cb">
-        <input type="checkbox" id='cb' checked={language.css} onChange={(e) => {
-          setlanguage({
-            ...language,
-            css: e.target.checked
-          })
-        }} />
-        CSS
-
-      </label>
-
-      <label htmlFor="cb">
-        <input type="checkbox" id='cb' checked={language.js} onChange={(e) => {
-          setlanguage({
-            ...language,
-            js: e.target.checked
-          })
-        }} />
-        JS
-
-      </label>
-
-      <br />
-      <br />
-
-      {language.css && 'css clicked'}
-      <br />
-      <br />
-      {language.js && 'js clicked'}
-      <br />
-      <br />
-      {language.html && 'html clicked'}
-
-
-
-
+      
     </div>
   )
 }
+
 export default App
