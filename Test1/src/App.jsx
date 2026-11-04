@@ -1,7 +1,17 @@
-import React, { useState } from 'react'
+
+import './App.css'
+import Navbar from './Component/Navbar'
+import Home from './Component/Home'
+import About from './Component/About'
+import Contact from './Component/Contact'
+import Help from './Component/Help'
+import { Routes, Route } from 'react-router-dom'
+
+
 
 function App() {
 
+<<<<<<< HEAD
   const [language, setLanguage] = useState({
     html: false,
     css: false,
@@ -15,6 +25,8 @@ function App() {
     [key]:e.target.checked
    })
 
+=======
+>>>>>>> 1271966 (Initial commit)
 
   }
 
@@ -23,6 +35,7 @@ function App() {
 
 
   return (
+<<<<<<< HEAD
     <div>
       <div className='select-none'>
 
@@ -52,7 +65,26 @@ function App() {
 
 
     </div>
+=======
+    <>
+      <div>
+        <Navbar />
+      </div>
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/help' element={<Help />} />
+      </Routes>
+
+    </>
+>>>>>>> 1271966 (Initial commit)
   )
 }
 
+
 export default App
+
+
+
