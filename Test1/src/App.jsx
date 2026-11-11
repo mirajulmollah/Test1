@@ -4,33 +4,49 @@ import Home from './Component/Home'
 import About from './Component/About'
 import Contact from './Component/Contact'
 import Help from './Component/Help'
-import { Routes, Route } from 'react-router-dom'
-
-
-
-
+import { Routes, Route, Navigate, createBrowserRouter, RouterProvider } from 'react-router-dom'
+import DetailedContact from './Component/DetailedContact'
+import A1 from './Component/A1'
+import A2 from './Component/A2'
+import Layout from './Component/Layout'
 
 
 function App() {
+  const rau = createBrowserRouter([
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
 
-
-
-
-
-
+        {
+          path: '/',
+          element: < Home />,
+        },
+        {
+          path: '/about',
+          element: < About />,
+        },
+        {
+          path: '/contact',
+          element: < Contact />,
+        },
+        {
+          path: '/help',
+          element: < Help />,
+        },
+        
+      ]
+    }
+  ])
   return (
     <>
       <div>
-        <Navbar />
+        <RouterProvider router={rau} />
+        
       </div>
 
 
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/help' element={<Help />} />
-      </Routes>
+
 
 
     </>
